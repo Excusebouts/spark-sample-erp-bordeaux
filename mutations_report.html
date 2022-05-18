@@ -1,0 +1,1378 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 18/05/2022 21:41:03</p><p>Total jobs: 67</p><p>Complete: 67 (100.00%)</p><p>Surviving mutants: 65 (97.01%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 22cf8bcc16e145e98ca066ffed3023c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=src/helpers/configuration.py&amp;line=10" class="text-secondary"><button class="btn btn-outline-dark">src/helpers/configuration.py, start pos: (10, 7), end pos: (10, 10)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/helpers/configuration.py
++++ bsrc/helpers/configuration.py
+@@ -7,7 +7,7 @@
+ 
+ 
+ def load_file(file: str):
+-    if not os.path.exists(file):
++    if  os.path.exists(file):
+         raise FileNotFoundError(f"File {file} doesn't exist")
+ 
+     yaml_file = yaml.load(open(file), Loader=yaml.FullLoader)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py F
+
+=================================== FAILURES ===================================
+_________________ TestConfiguration.test__load_file_with_data __________________
+
+self = &lt;tests.helpers.test_configuration.TestConfiguration testMethod=test__load_file_with_data&gt;
+mock_open = &lt;MagicMock name='exists' id='140115940490352'&gt;
+mock_yaml = &lt;MagicMock name='load' id='140115940623312'&gt;
+mock_exist = &lt;MagicMock name='open' id='140115940639456'&gt;
+
+    @patch('builtins.open')
+    @patch('yaml.load', return_value=mock_conf)
+    @patch('os.path.exists', return_value=True)
+    def test__load_file_with_data(self, mock_open, mock_yaml, mock_exist):
+&gt;       _file = load_file('file.txt')
+
+tests/helpers/test_configuration.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+file = 'file.txt'
+
+    def load_file(file: str):
+        if  os.path.exists(file):
+&gt;           raise FileNotFoundError(f"File {file} doesn't exist")
+E           FileNotFoundError: File file.txt doesn't exist
+
+src/helpers/configuration.py:11: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/helpers/test_configuration.py::TestConfiguration::test__load_file_with_data
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 0.17s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 0968eab6dc934deb89d134ee520c1116</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=src/helpers/configuration.py&amp;line=10" class="text-secondary"><button class="btn btn-outline-dark">src/helpers/configuration.py, start pos: (10, 7), end pos: (10, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/helpers/configuration.py
++++ bsrc/helpers/configuration.py
+@@ -7,7 +7,7 @@
+ 
+ 
+ def load_file(file: str):
+-    if not os.path.exists(file):
++    if not not os.path.exists(file):
+         raise FileNotFoundError(f"File {file} doesn't exist")
+ 
+     yaml_file = yaml.load(open(file), Loader=yaml.FullLoader)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py F
+
+=================================== FAILURES ===================================
+_________________ TestConfiguration.test__load_file_with_data __________________
+
+self = &lt;tests.helpers.test_configuration.TestConfiguration testMethod=test__load_file_with_data&gt;
+mock_open = &lt;MagicMock name='exists' id='140433633492320'&gt;
+mock_yaml = &lt;MagicMock name='load' id='140433633625136'&gt;
+mock_exist = &lt;MagicMock name='open' id='140433633641280'&gt;
+
+    @patch('builtins.open')
+    @patch('yaml.load', return_value=mock_conf)
+    @patch('os.path.exists', return_value=True)
+    def test__load_file_with_data(self, mock_open, mock_yaml, mock_exist):
+&gt;       _file = load_file('file.txt')
+
+tests/helpers/test_configuration.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+file = 'file.txt'
+
+    def load_file(file: str):
+        if not not os.path.exists(file):
+&gt;           raise FileNotFoundError(f"File {file} doesn't exist")
+E           FileNotFoundError: File file.txt doesn't exist
+
+src/helpers/configuration.py:11: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/helpers/test_configuration.py::TestConfiguration::test__load_file_with_data
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+============================== 1 failed in 0.17s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_3_1"><button class="btn btn-outline-danger"><span class="job_id">3 : Job ID 8be1fbdd4ad6492092c97225f99f3f25</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] - analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 13.63s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_4_1"><button class="btn btn-outline-danger"><span class="job_id">4 : Job ID 1dfe377b26a04e0c949e1e154b6db76c</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] - analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.35s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_5_1"><button class="btn btn-outline-danger"><span class="job_id">5 : Job ID 85f8935dee2d4fa69324cd72c8cb3a69</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] * analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 13.58s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_6_1"><button class="btn btn-outline-danger"><span class="job_id">6 : Job ID f3b8b1242ade478fa375113dc8b63504</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] * analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.96s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_7_1"><button class="btn btn-outline-danger"><span class="job_id">7 : Job ID afd07864ecf94a059790883213553b49</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] / analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.15s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_8_1"><button class="btn btn-outline-danger"><span class="job_id">8 : Job ID 4b01da23f51e4430967979d583b7f781</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] / analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.20s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_9_1"><button class="btn btn-outline-danger"><span class="job_id">9 : Job ID 5afb9094e5fb4275b7ca43d749f7fb2a</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] // analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.86s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_10_1"><button class="btn btn-outline-danger"><span class="job_id">10 : Job ID 4c8c5f49f4d247a88964b3e8092e8ed4</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] // analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 19.66s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 3c2fc1edadb4470785f3b5f94d7a4665</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] % analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.55s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID eaf815d271734587abc49669590d505c</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] % analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 20.41s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_13_1"><button class="btn btn-outline-danger"><span class="job_id">13 : Job ID 799aa429ae724b8a8d937cc6adcdfb5f</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] ** analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 18.86s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID cdf16278d1714ecd9f00c52175f27c76</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] ** analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.20s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_15_1"><button class="btn btn-outline-danger"><span class="job_id">15 : Job ID c759aa346c3645e79866bf62483ca0dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &gt;&gt; analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.53s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID 37e6c5a2863946f8911ea82affab1e59</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &gt;&gt; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 19.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_17_1"><button class="btn btn-outline-danger"><span class="job_id">17 : Job ID b9fb5c7505ce4dc0b2080d483811a175</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &lt;&lt; analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 21.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_18_1"><button class="btn btn-outline-danger"><span class="job_id">18 : Job ID 03bae85dd81641bbbbc8e758522f35ae</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &lt;&lt; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 19.01s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_19_1"><button class="btn btn-outline-danger"><span class="job_id">19 : Job ID 5178d1fd74ed4ec5809fc3f5f32bb831</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] | analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 19.38s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_20_1"><button class="btn btn-outline-danger"><span class="job_id">20 : Job ID db6eb58d436a4c01ba775552446914f3</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] | analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 18.26s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_21_1"><button class="btn btn-outline-danger"><span class="job_id">21 : Job ID 0b50807bf3cb4ffea95a72c0ebaf18cb</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &amp; analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.12s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_22_1"><button class="btn btn-outline-danger"><span class="job_id">22 : Job ID 7e0759a2fd74463eb7588776defaaa77</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &amp; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.00s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_23_1"><button class="btn btn-outline-danger"><span class="job_id">23 : Job ID ef9e5be0e9864b7290ed68d4469eeebe</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (20, 47), end pos: (20, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -17,7 +17,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] ^ analysis_exception.stackTrace)
+         exit()
+ 
+     _nb_visitors_by_street = get_nb_max_visitors_by_street(_schema, _config, _dataframe_read)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.12s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID 11ef9725b7ef4a23aef50ec892fd8474</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] ^ analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.67s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_25_1"><button class="btn btn-outline-danger"><span class="job_id">25 : Job ID 950fc0f2351b44d2a93d8c410ac4c895</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.60s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_26_1"><button class="btn btn-outline-danger"><span class="job_id">26 : Job ID 12e22e6d60844156bcf7cef9e309969a</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.40s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_27_1"><button class="btn btn-outline-danger"><span class="job_id">27 : Job ID 5438346bf01a4ab3982014fdbacbcb4c</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.02s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_28_1"><button class="btn btn-outline-danger"><span class="job_id">28 : Job ID a0cc6f8a458f48eb98b4a56cb7ccf0c4</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.83s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_29_1"><button class="btn btn-outline-danger"><span class="job_id">29 : Job ID 98f3a0a20b9348a7988501ca04c0a335</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_30_1"><button class="btn btn-outline-danger"><span class="job_id">30 : Job ID 45edfab69bdc4db1bb43948c1a0aba55</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.16s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_31_1"><button class="btn btn-outline-danger"><span class="job_id">31 : Job ID f037d3a090df4429a7d55e4c7b087e99</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.87s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_32_1"><button class="btn btn-outline-danger"><span class="job_id">32 : Job ID a8f2605e404b4bbd86daeec5e27e7b96</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (35, 3), end pos: (35, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.26s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_33_1"><button class="btn btn-outline-danger"><span class="job_id">33 : Job ID f21e639fce514e32a2f0ca6ae06e6a30</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (19, 11), end pos: (19, 28)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -16,7 +16,7 @@
+     _dataframe_read = None
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+-    except AnalysisException as analysis_exception:
++    except CosmicRayTestingException as analysis_exception:
+         _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
+         exit()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 19.79s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 54f2ebbd58e544ce99abc4cf5613979c</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/compute_visitors.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src/compute_visitors.py, start pos: (28, 11), end pos: (28, 28)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/compute_visitors.py
++++ bsrc/compute_visitors.py
+@@ -25,7 +25,7 @@
+ 
+     try:
+         write_to_csv(_config, _nb_visitors_by_street, _logger)
+-    except AnalysisException as analysis_exception:
++    except CosmicRayTestingException as analysis_exception:
+         _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
+         exit()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.38s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_35_1"><button class="btn btn-outline-danger"><span class="job_id">35 : Job ID 4be67796cfd44c6cba46d468263b5ef7</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] - analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.12s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_36_1"><button class="btn btn-outline-danger"><span class="job_id">36 : Job ID c0073a5aeb8d403a82d2034e642a5693</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] - analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.21s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_37_1"><button class="btn btn-outline-danger"><span class="job_id">37 : Job ID e229840d0dee46558618f49ed17ff186</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] * analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.92s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_38_1"><button class="btn btn-outline-danger"><span class="job_id">38 : Job ID d9c9eff260af4f1d8beb987673044490</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] * analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.99s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_39_1"><button class="btn btn-outline-danger"><span class="job_id">39 : Job ID 117bb902eb0e4f6bb36f45564acc5cac</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] / analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.78s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_40_1"><button class="btn btn-outline-danger"><span class="job_id">40 : Job ID 569401d473df4a46b4ff063b0f187b9d</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] / analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.66s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_41_1"><button class="btn btn-outline-danger"><span class="job_id">41 : Job ID d568ceb8dcab4ac4b10945d29a63bb40</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] // analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.63s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_42_1"><button class="btn btn-outline-danger"><span class="job_id">42 : Job ID 4f704ed9df044f94b86d67a3675ff5f1</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] // analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.16s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_43_1"><button class="btn btn-outline-danger"><span class="job_id">43 : Job ID 1b506b026a6f4b46acefd67b66177cdc</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] % analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.46s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_44_1"><button class="btn btn-outline-danger"><span class="job_id">44 : Job ID 7f5dd9435af74cc5888879c210fb3ef0</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] % analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.94s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_45_1"><button class="btn btn-outline-danger"><span class="job_id">45 : Job ID f387fdc69b704792b7a25674a2b96f27</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] ** analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.25s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_46_1"><button class="btn btn-outline-danger"><span class="job_id">46 : Job ID 032436dc82884978b093eff1c312bbb6</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] ** analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_47_1"><button class="btn btn-outline-danger"><span class="job_id">47 : Job ID aa8790c321a24f68a4e5ff988e9ced85</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &gt;&gt; analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.27s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_48_1"><button class="btn btn-outline-danger"><span class="job_id">48 : Job ID 912168e3f75943b2a3a85210f9d04612</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &gt;&gt; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.45s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_49_1"><button class="btn btn-outline-danger"><span class="job_id">49 : Job ID 0ca835614b3846d5ace08d7df07e3c0c</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &lt;&lt; analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.54s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_50_1"><button class="btn btn-outline-danger"><span class="job_id">50 : Job ID 01df851999624bedb175d4fcd126fd44</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &lt;&lt; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.39s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_51_1"><button class="btn btn-outline-danger"><span class="job_id">51 : Job ID 9f6b0ace38904c5da4334d25a1155ec8</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] | analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.48s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_52_1"><button class="btn btn-outline-danger"><span class="job_id">52 : Job ID 72f0fc39f6ee4dd9a9149e86b6a67af1</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] | analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.85s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_53_1"><button class="btn btn-outline-danger"><span class="job_id">53 : Job ID 0f5e0f4668b44f4c9a2ef40f48e8d93b</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] &amp; analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.36s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_54_1"><button class="btn btn-outline-danger"><span class="job_id">54 : Job ID 926f5816aa1042e987e5f2bd65142aa3</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] &amp; analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.41s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_55_1"><button class="btn btn-outline-danger"><span class="job_id">55 : Job ID 9bff8a815f114ad9b30b1d3a30efad57</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (19, 47), end pos: (19, 48)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -16,7 +16,7 @@
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['read']['error'] ^ analysis_exception.stackTrace)
+         exit()
+ 
+     # https://issues.apache.org/jira/browse/SPARK-18084</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.26s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_56_1"><button class="btn btn-outline-danger"><span class="job_id">56 : Job ID 60feb849ffa049c8a1d36ce71865d752</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (29, 48), end pos: (29, 49)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -26,7 +26,7 @@
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+     except AnalysisException as analysis_exception:
+-        _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
++        _logger.error(_config['write']['error'] ^ analysis_exception.stackTrace)
+         exit()
+ 
+     _logger.info(f"[{_config['name']}] - End of script")</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.86s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_57_1"><button class="btn btn-outline-danger"><span class="job_id">57 : Job ID 7770ee3bc5bd47369e18035442581e68</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.01s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_58_1"><button class="btn btn-outline-danger"><span class="job_id">58 : Job ID 15ee071585834a76b4ce5ec7b2566738</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.44s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_59_1"><button class="btn btn-outline-danger"><span class="job_id">59 : Job ID 240c606d1ef24261866dbbfa9b2c620d</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.15s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_60_1"><button class="btn btn-outline-danger"><span class="job_id">60 : Job ID 2103c53573634add8db8d097ac05128d</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.32s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_61_1"><button class="btn btn-outline-danger"><span class="job_id">61 : Job ID 265390ee4f3140938a072040e6b30e18</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 17.67s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_62_1"><button class="btn btn-outline-danger"><span class="job_id">62 : Job ID de4358b116f54cd3b6bf61632e085a3a</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.84s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_63"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_63_1" aria-expanded="false" aria-controls="job_list___sub_collapse_63_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_63_1"><button class="btn btn-outline-danger"><span class="job_id">63 : Job ID aff44e63abda43eab096f4140055f72e</span></button></div></a><div aria-labelledby="job_list___sub_heading_63_1" data-parent="#job_list___sub_accordion_63" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_63_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 12), end pos: (35, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.56s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_64"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_64_1" aria-expanded="false" aria-controls="job_list___sub_collapse_64_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_64_1"><button class="btn btn-outline-danger"><span class="job_id">64 : Job ID 657d4e98ca2c457f9809d8da051f4424</span></button></div></a><div aria-labelledby="job_list___sub_heading_64_1" data-parent="#job_list___sub_accordion_64" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_64_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (35, 3), end pos: (35, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -32,6 +32,6 @@
+     _logger.info(f"[{_config['name']}] - End of script")
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     run()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 15.39s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_65"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_65_1" aria-expanded="false" aria-controls="job_list___sub_collapse_65_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_65_1"><button class="btn btn-outline-danger"><span class="job_id">65 : Job ID 3bd0ec669e4a40059cbd0f0057c630a5</span></button></div></a><div aria-labelledby="job_list___sub_heading_65_1" data-parent="#job_list___sub_accordion_65" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_65_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=18" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (18, 11), end pos: (18, 28)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -15,7 +15,7 @@
+     _dataframe_read = None
+     try:
+         _dataframe_read = read_from_json(_config, _spark_session, _logger)
+-    except AnalysisException as analysis_exception:
++    except CosmicRayTestingException as analysis_exception:
+         _logger.error(_config['read']['error'] + analysis_exception.stackTrace)
+         exit()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 14.61s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_66"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_66_1" aria-expanded="false" aria-controls="job_list___sub_collapse_66_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_66_1"><button class="btn btn-outline-danger"><span class="job_id">66 : Job ID a1725dba36af4ab0a96508acf5a8bd8e</span></button></div></a><div aria-labelledby="job_list___sub_heading_66_1" data-parent="#job_list___sub_accordion_66" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_66_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/json_to_parquet.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">src/json_to_parquet.py, start pos: (28, 11), end pos: (28, 28)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/json_to_parquet.py
++++ bsrc/json_to_parquet.py
+@@ -25,7 +25,7 @@
+ 
+     try:
+         write_to_parquet(_config, _dataframe_read_flat, _logger)
+-    except AnalysisException as analysis_exception:
++    except CosmicRayTestingException as analysis_exception:
+         _logger.error(_config['write']['error'] + analysis_exception.stackTrace)
+         exit()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 16.40s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_67"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_67_1" aria-expanded="false" aria-controls="job_list___sub_collapse_67_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_67_1"><button class="btn btn-outline-danger"><span class="job_id">67 : Job ID c388bf7c98034dfa947919123dda980c</span></button></div></a><div aria-labelledby="job_list___sub_heading_67_1" data-parent="#job_list___sub_accordion_67" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_67_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=src/helpers/io.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">src/helpers/io.py, start pos: (24, 54), end pos: (24, 58)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- asrc/helpers/io.py
++++ bsrc/helpers/io.py
+@@ -21,6 +21,6 @@
+ def write_to_csv(config: dict, dataframe: DataFrame, logger) -&gt; None:
+     logger.info(f"[{config['name']}] Data write data in csv")
+     dataframe.write.mode(config['write']['mode'])\
+-        .csv(config['write']['output']['csv'], header=True)
++        .csv(config['write']['output']['csv'], header=False)
+     logger.info(f"[{config['name']} Data write OK")
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.9.7, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/cvibey/PycharmProjects/spark-erp-bordeaux
+collected 9 items
+
+tests/helpers/test_configuration.py ......                               [ 66%]
+tests/helpers/test_io.py ...                                             [100%]
+
+============================== 9 passed in 18.50s ==============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

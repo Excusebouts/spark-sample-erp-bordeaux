@@ -31,7 +31,21 @@ In resources/output/ :
 - Refacto of the flatten part
 - Improve regex for street names
 - Process compute_visitors with pyspark sql to compare with rdd
+- Improve TUs because mutations_report.html is explicit
 - Add TI
+
+## Mutation testing
+We talked about it so I added it, to launch :
+1. cosmic-ray init setup-mutation-testing.toml mutations.sqlite -> init
+2. cosmic-ray --verbosity=INFO baseline setup-mutation-testing.toml -> verify configuration
+3. cosmic-ray exec setup-mutation-testing.toml mutations.sqlite -> execution
+
+To see the progress :
+1. open new terminal
+2. cr-report mutations.sqlite --show-pending
+
+To generate the report:
+1. cr-html mutations.sqlite > mutations_report.html
 
 ## Advice
 Use Pycharm Community Edition for import project and run tests ;-)
