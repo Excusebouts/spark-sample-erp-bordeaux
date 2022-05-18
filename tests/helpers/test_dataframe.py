@@ -24,7 +24,6 @@ class TestDataframe(unittest.TestCase):
         self.assertTrue(_df_flatten.schema.simpleString().find("field_type"))
         self.assertTrue(_df_flatten.schema.simpleString().find("geometry_type"))
 
-
     def test_get_nb_max_visitors_by_street(self):
         _columns_expected = ["street", "avec_hebergement", "sum(nb_visiteurs_max)"]
         _data_expected = [("courslintendance", "1", 0), ("courslintendance", "0", 25)]
