@@ -10,5 +10,9 @@ write:
   partition: "field_type" #partition: "geometry_type"
   output:
     parquet: "../resources/output/bor_erp.parquet"
+    csv: "../resources/output/street_visitors_accommodation.csv"
   error: "Unable to write parquet : "
   streaming: false
+
+regexp:
+  street: '[^a-zA-Z]+'

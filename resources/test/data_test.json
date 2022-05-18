@@ -19,5 +19,47 @@
       "type": "Point",
       "coordinates": [-0.577819, 44.84178]},
     "record_timestamp": "2020-03-10T09:31:00.225+01:00"
+  },
+  {
+    "datasetid": "bor_erp",
+    "recordid": "9d1a3888ae2c1732c80fa9a258367b59f1798c84",
+    "fields": {
+      "type": "M",
+      "commune": "BORDEAUX",
+      "adresse_1": "35 cours l'INTENDANCE",
+      "geometrie": [44.84178, -0.577819],
+      "propriete_ville": "0",
+      "effectif_personnel": 0,
+      "nb_visiteurs_max": 15,
+      "nom_etablissement": "BOUTIQUE JO MALONE",
+      "avec_hebergement": "0",
+      "categorie": 5.0,
+      "code_postal": "33000"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.577819, 44.84178]},
+    "record_timestamp": "2020-03-10T09:31:00.225+01:00"
+  },
+  {
+    "datasetid": "bor_erp",
+    "recordid": "9d1a3888ae2c1732c80fa9a258367b59f1798c84",
+    "fields": {
+      "type": "M",
+      "commune": "BORDEAUX",
+      "adresse_1": "22-24 cours l'INTENDANCE",
+      "geometrie": [44.84178, -0.577819],
+      "propriete_ville": "0",
+      "effectif_personnel": 0,
+      "nb_visiteurs_max": 0,
+      "nom_etablissement": "BOUTIQUE JO MALONE",
+      "avec_hebergement": "1",
+      "categorie": 5.0,
+      "code_postal": "33000"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.577819, 44.84178]},
+    "record_timestamp": "2020-03-10T09:31:00.225+01:00"
   }
 ]

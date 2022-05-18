@@ -12,3 +12,6 @@ geometry: 'geometry.*'
 renamed:
   field: 'field_type'
   geometry: 'geometry_type'
+accommodation: 'avec_hebergement'
+visitors: 'nb_visiteurs_max'
+street: 'street'

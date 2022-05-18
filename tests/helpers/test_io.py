@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 from src.helpers.configuration import init_spark_session
-from src.helpers.io import read_from_json, write_to_parquet
+from src.helpers.io import read_from_json, write_to_parquet, write_to_csv
 
 mock_conf = {'name': 'spark-erp-bordeaux-tu', 'read': {'input': 'file_tu'}, 'write': {'mode': 'overwrite', 'partition':
     'field_type', 'output': {'parquet': 'parquet.parquet', 'csv': 'csv.csv'}}}
@@ -38,6 +38,15 @@ class TestIO(unittest.TestCase):
         _logger = Mock()
 
         write_to_parquet(mock_conf, self.mock_dataframe_read, _logger)
+
+        mock_write.assert_called_once()
+        _logger.info.assert_called()
+
+    @patch('pyspark.sql.readwriter.DataFrameWriter.csv')
+    def test_write_to_csv(self, mock_write):
+        _logger = Mock()
+
+        write_to_csv(mock_conf, self.mock_dataframe_read, _logger)
 
         mock_write.assert_called_once()
         _logger.info.assert_called()
