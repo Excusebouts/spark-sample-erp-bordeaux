@@ -1,0 +1,14 @@
+name: 'spark-sample-erp-bordeaux'
+
+read:
+  input: "../resources/data/bor_erp.json"
+  error: "Check input file : "
+  streaming: false
+
+write:
+  mode: "overwrite"
+  partition: "field_type" #partition: "geometry_type"
+  output:
+    parquet: "../resources/output/bor_erp.parquet"
+  error: "Unable to write parquet : "
+  streaming: false

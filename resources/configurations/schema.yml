@@ -1,0 +1,14 @@
+dataset: 'datasetid'
+record:
+  id: 'recordid'
+  timestamp: 'record_timestamp'
+address: 'fields.adresse_1'
+fields:
+  all: 'fields.*'
+  accommodation: 'fields.avec_hebergement'
+  visitors: 'fields.nb_visiteurs_max'
+  type: 'type'
+geometry: 'geometry.*'
+renamed:
+  field: 'field_type'
+  geometry: 'geometry_type'
